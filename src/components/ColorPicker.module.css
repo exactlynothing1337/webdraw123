@@ -1,0 +1,94 @@
+.root { display: flex; flex-direction: column; gap: 8px; }
+
+.swatchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bigSwatch {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  flex-shrink: 0;
+}
+
+.fillSwatch { margin-left: -16px; margin-top: 8px; }
+
+.bigSwatch.selected {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--accent);
+}
+
+.swatchLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 8px;
+}
+
+.activeLabel { color: var(--accent); font-weight: 500; }
+
+.pickerRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nativePicker {
+  width: 36px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: 2px;
+  cursor: pointer;
+  background: var(--bg);
+}
+
+.hexInput {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: monospace;
+  font-size: 12px;
+  outline: none;
+}
+
+.hexInput:focus { border-color: var(--accent); }
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+}
+
+.swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform 0.1s;
+  outline: none;
+}
+
+.swatch:hover { transform: scale(1.15); }
+
+.swatch.active {
+  box-shadow: 0 0 0 2px white, 0 0 0 3.5px var(--accent);
+  transform: scale(1.1);
+}

@@ -1,0 +1,43 @@
+.wrapper {
+  flex: 1;
+  overflow: auto;
+  background: var(--bg);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 32px;
+  background-image:
+    radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.canvasContainer {
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--border-strong);
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.resizeHandle {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 2px;
+  cursor: se-resize;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.resizeHandle:hover { opacity: 1; }
